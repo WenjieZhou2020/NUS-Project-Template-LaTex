@@ -1,0 +1,243 @@
+%% Requires compilation with XeLaTeX or LuaLaTeX
+\documentclass[12pt,xcolor={table,dvipsnames},t]{beamer}
+\usetheme{UCBerkeley}
+\usepackage{amsmath}
+\usepackage{microtype}
+
+% \title[]{\Large{Broadwell Model of Boltzmann equation}}
+% If you want to title squeeze into one line, uncomment above line %
+
+\title[]{Broadwell Model of Boltzmann equation}
+\subtitle{}
+\author{Zhou Wenjie}
+\institute{Science/Mathematics}
+\date{13 April 2021}
+
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%if you want add under-brace with circle tag item, please uncomment below%%%%%
+% \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+%             \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+\addtobeamertemplate{navigation symbols}{}{%
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{footline}%
+    \hspace{1em}%
+    \insertframenumber/\inserttotalframenumber
+}
+% \setbeamercolor{footline}{fg=blue}
+% \setbeamerfont{footline}{series=\bfseries}
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+\begin{frame}{Outline}
+ \tableofcontents
+\end{frame}
+
+% The following introduction is part of my own FYP presentation slides, you can use it as a template, just for demonstration purposes here. I think it is faster than using powerpoint, especially if you need to enter a lot of equations.%
+
+
+\section{Introduction}
+
+\begin{frame}{Introduction}
+
+
+\begin{block}{Broadwell Model of Boltzmann Equation}
+Broadwell model is the classic example of a discrete velocity gas introcuced by J.E. Broadwell in 1964.This model simplifies the Boltzmann equation and gives approximate solution to the Boltzmann equation, it is useful to study related gas dynamics, shock structure, and gas flow theory etc.
+\end{block}
+
+\end{frame}
+
+
+\subsection{Background}
+\begin{frame}{Background}
+In 1738 Daniel Bernoulli gave concept for the kinetic theory of gas. He describes that gases consists of lager number of particles moving in every direction and bounced each other will connecting to their pressure, temperature and kinetic energy. Maxwell gave cal argument that molecular collisions and eventually tends to equilibrium. In 1871, Until Ludwig Boltzmann first gave the concept that logarithmic connection between entropy and probability.Albert Einstein's in 1905 and Marian Smoluchowski's make accurate quantitative prediction on kinetic theory in papers on Brownian motion.The kinetic theory of gasses of thermodynamic were established.
+\end{frame}
+
+% \subsection{Mathematics}
+
+\begin{frame}{Boltzmann Equation}
+Boltzmann equation describes of determination of the single particle distribution function an ideal monoatomic gas, in dimensionless variables it has the form:
+\begin{equation}
+    \frac{\partial f}{\partial t}+(v,\nabla_xf)+(F,\nabla_vf)=\frac1\epsilon L(f,f).\label{*}\tag{*} 
+\end{equation}
+
+Here $f(x,v,t)$ is the density of the distribution function of the number of particles in the phase space $x\otimes v$, $x$ is the three-dimensional space coordinate, $v$ is the velocity, $t$ is the time, $F$ is the field strength of the external forces, and $\epsilon$ is a dimensionless parameter. 
+\end{frame}
+
+
+\begin{frame}{Background}
+\textbf{Collision Operator}\\
+ In the simplest case the collision operator has the form:
+\begin{equation}
+L(f,f)=\int[f(v')f(v_1')-f(v)f(v_1)]|v-v_1|\,d\omega\,dv_1, 
+\end{equation}
+
+where $v_1$ and $v$ are the velocities of the molecules before collision, $v_1'$ and $v'$ are the velocities of the molecules after collision, and $d\omega$ is the solid angle element in the direction of the vector $v_1-v$.
+
+\end{frame}
+
+\subsection{Boltzmann Equation}
+\begin{frame}{Boltzmann Equation}
+\textbf{Assumptions}
+\begin{itemize}
+  \item The evolution of the function $f(x,v,t)$ is determined by its value at a given moment of time $t$ and by the pairwise collisions between the gas molecules
+  \item The time of interaction between two gas molecules during collision is much shorter than the time during which they move independently of each other. 
+  \item The operator $L$ in accordance with the well-known laws of motion of two gas molecules which collide with one another.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Boltzmann Equation}
+\textbf{Assumptions}:
+In equation \eqref{*} the range of variation of the variable $t$ is the half-line $t\geq0$; the range of variation of $v$ is the entire space $\mathbf R^3$; and the range of variation of $x$ is a subspace $\Omega$ in $\mathbf R^3$ ($\Omega$ may coincide with $\mathbf R^3$). In accordance with its physical meaning, the function $f(x,v,t)$ should be non-negative and such that
+
+$$\int f(x,v,t)v^2\,dv<\infty.$$
+
+The simplest boundary condition on $\partial\Omega$ has the form $f(v-2n(n,v),x,t)=f(v,x,t),\quad x\in\partial\Omega,\quad v\in\mathbf R^3,$
+where $n$ is the normal to $\partial\Omega$. 
+There exist a number of rigorous statements of the Cauchy problem for equation \eqref{*} .
+\end{frame}
+
+\subsection{Broadwell Model}
+\begin{frame}{Broadwell Model}
+Broadwell model is the classic example of a discrete velocity gas introcuced by J.E. Broadwell in 1964. A discrete velocity model consists of collection of gas molecules and those molecules collide with each other under the conservation laws. This model simplifies the Boltzmann equation and gives approximate solution to the Boltzmann equation, it is useful to study related gas dynamics, shock structure, and gas flow theory etc.
+\end{frame}
+
+
+\begin{frame}{Broadwell Model}
+\textbf{Definition}: A collection of gas molecules with velocities $ \mathbf {u}_i$ belongs to a finite set $S$ of discrete velocity vector in $\mathbf{R}^n$. 
+
+\textbf{Assumptions}: 
+\begin{itemize}
+  \item Assume each mass of molecule m is identical;
+  \item Gas particles are collided only in pairs.
+  \item Each molecule is allowed to move in space with velocity:\\
+  $  \mathbf u _ {1} = ( 1,0,0 ) $, 
+$  \mathbf u _ {2} = ( - 1,0,0 ) $, 
+$  \mathbf u _ {3} = ( 0,1,0 ) $, 
+$  \mathbf u _ {4} = ( 0, - 1,0 ) $, 
+$  \mathbf u _ {5} = ( 0,0,1 ) $, 
+$  \mathbf u _ {6} = ( 0,0, - 1 ) $.
+  \item The collision obey conservation laws for mass, momentum and kinetic energy.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Broadwell Model}
+    Let  $  ( \mathbf v _ {i} , \mathbf v _ {j} ) \rightarrow ( \mathbf v _ {k} , \mathbf v _ {l} ) $
+denote a collision of particles with initial velocities  $  \mathbf v _ {i} $
+and  $  \mathbf v _ {j} $
+and final velocities  $  \mathbf v _ {k} $
+and  $  \mathbf v _ {l} $. 
+Conservation of momentum dictates that the only possible collisions are then
+
+$
+( v _ {1} , v _ {2} ) \rightarrow ( v _ {1} , v _ {2} ) ,
+$ $
+( v _ {1} , v _ {2} ) \rightarrow ( v _ {3} , v _ {4} ) , 
+$ $
+( v _ {1} ,v _ {2} ) \rightarrow ( v _ {5} , v _ {6} ) ,
+$ $
+( v _ {3} , v _ {4} ) \rightarrow ( v _ {1} , v _ {2} ) , 
+$ 
+
+$
+( v _ {3} , v _ {4} ) \rightarrow ( v _ {3} , v _ {4} ) ,
+$ $
+( v _ {3} , v _ {4} ) \rightarrow ( v _ {5} , v _ {6} ) , 
+$ $
+( v _ {5} , v _ {6} ) \rightarrow ( v _ {1} , v _ {2} ) ,
+$ $
+( v _ {5} , v _ {6} ) \rightarrow ( v _ {3} , v _ {4} ) , 
+$
+
+$
+( v _ {5} , v _ {6} ) \rightarrow ( v _ {5} , v _ {6} ) .
+$
+
+
+
+Letting  $  N _ {i} = N _ {i} ( \mathbf x,t ) $
+denote the number density of molecules with velocity  $  \mathbf v _ {i} $, 
+the Boltzmann equation can be written as
+$$ 
+{
+\frac{\partial  N _ {i} }{\partial  t }
+ } + \mathbf u _ {i} \cdot \nabla N _ {i} = G _ {i} - L _ {i} ,
+$$
+
+where  $  G _ {i} $
+and  $  L _ {i} $
+are the rates of gain and loss in  $  N _ {i} $
+as a result of collisions. 
+\end{frame}
+
+\begin{frame}{Broadwell Model}
+Assuming spherical symmetry and collisional cross section  $  \sigma $, 
+one has, for example,
+    $$ 
+G _ {1} = {
+\frac{2}{3}
+ } \sigma N _ {3} N _ {4} + {
+\frac{2}{3}
+ } \sigma N _ {5} N _ {6}  $$
+
+and
+
+$$ 
+L _ {1} = {
+\frac{4}{3}
+ } \sigma N _ {1} N _ {2} ,
+$$
+
+since one-third of the  $  ( \mathbf v _ {3} , \mathbf v _ {4} ) $
+and  $  ( \mathbf v _ {5} , \mathbf v _ {6} ) $
+collisions yield  $  ( \mathbf v _ {1} , \mathbf v _ {2} ) $
+pairs.
+\end{frame}
+
+\begin{frame}{Broadwell Model}
+The diffusive and linear hyperbolic waves are approximate solutions of the fluid dynamic equations corresponding to the Broadwell model . The error terms can be estimated by using a variation of the energy estimates method.
+
+The Broadwell model descries a gas composed of particles of only six speeds with a binary collision law and spatial variation in only one direction. 
+\end{frame}
+
+\begin{frame}{Broadwell Model}
+In one space dimension the model has the form:
+\begin{equation}
+\label{Broad}
+\begin{aligned}
+    \partial_{t}f^+ + \partial{_x}f^+ &= \frac{1}{\epsilon}(f^0f^0-f^+f^-)\\
+    \partial{_t}f^0 &= \frac{1}{2\epsilon}(f^+f^--f^0f^0)\\
+    \partial{_t}f^- - \partial{_x}f^- &= \frac{1}{\epsilon}(f^0f^0 - f^+f^-)\\
+\end{aligned}
+\end{equation}
+where $\epsilon$ is the mean-free path, $f_+$, $f_0$, and $f_-$ denote the mass densities of gas particles with speed 1,0 and - 1, respectively.
+\end{frame}
+
+% \section{Expected Result}
+% \begin{frame}{Expected Result}
+% We expect the solution has an fluid dynamic approximation property, the Chapman-Enskog expansion, for the difference between the solution $f$ and the shock wave $f_1$- This approximation is valid for describing the nonlinear diffusion wave because the difference $f - f_1$ is small there.
+% \end{frame}
+
+\section{Section 1}
+
+\begin{frame}{Title 1}
+
+\begin{block}{Main Ideal}
+Write your descriptions and thoughts here for your presentation audience.
+\end{block}
+
+\end{frame}
+
+\end{document}
+
+%All the best for you FYP%
